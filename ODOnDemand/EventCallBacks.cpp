@@ -294,5 +294,6 @@ EventCallBacks::SessionStatus(
 		//s_isStop = true;
 	}
 
+	return 0;
 }
 #pragma endregion
