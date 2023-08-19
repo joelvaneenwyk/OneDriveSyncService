@@ -1,56 +1,61 @@
-# Now including support for On Demand!
+# OneDrive Sync Service
 
-**Watch this video to get started**
+Watch this video to get started:
 
 [![OneDriveLib Introduction](https://img.youtube.com/vi/2AqB-7Uq9lc/0.jpg)](https://www.youtube.com/watch?v=2AqB-7Uq9lc)
 
-**Open PowerShell (it cannot be in elevated mode because of OneDrive design)**
+Open PowerShell (it cannot be in elevated mode because of OneDrive design):
 
 [Download here](https://github.com/rodneyviana/ODSyncService/releases)
 
-**Before running the first time, use this to unblock the DLL that you downloaded:**
-```
+Before running the first time, use this to unblock the DLL that you downloaded:
+
+```powershell
 PS C:\ODTool> Unblock-File -Path C:\ODTool\OneDriveLib.dll # change path if necessary
 ```
 
 **Run this:**
-```
+
+```powershell
 Import-Module OneDriveLib.dll
 Get-ODStatus
 ```
 
 **This is an example of the output:**
-```
+
+```powershell
 PS C:\ODTool> Import-Module OneDriveLib.dll
 PS C:\ODTool> Get-ODStatus
 
-LocalPath    : E:\MicrosoftOnedrive\OneDrive - My Company
-UserSID      : S-1-5-21-124000000-708000000-1543000000-802052
-UserName     : CONTOSO\rodneyviana
+LocalPath    : E:\MicrosoftOnedrive\OneDrive - My Company
+UserSID      : S-1-5-21-124000000-708000000-1543000000-802052
+UserName     : CONTOSO\rodneyviana
 DisplayName  : OneDrive - Contoso
-ServiceType  : Business1
+ServiceType  : Business1
 StatusString : Looking for changes
 
 StatusString : UpToDate
-LocalPath    : D:\Onedrive
-UserSID      : S-1-5-21-124000000-708000000-1543000000-802052
+LocalPath    : D:\Onedrive
+UserSID      : S-1-5-21-124000000-708000000-1543000000-802052
 DisplayName  : OneDrive - Personal
-UserName     : CONTOSO\rodneyviana
-ServiceType  : Personal
+UserName     : CONTOSO\rodneyviana
+ServiceType  : Personal
 StatusString : Up To Date
 ```
 
 **Syntax:**
-```
+
+```powershell
 Get-ODStatus [-Type <type-Name>] [-ByPath <path>] [CLSID <guid>]
              [-IncludeLog] [-Verbose]
 
 Or
 Get-ODStatus -OnDemandOnly [-Type <type-Name>] [-IncludeLog] [-Verbose]
+```
 
-```
 **Where:**
-```
+
+```powershell
 -Type <type>       Only returns if Service Type matches <type>
                    Example: Get-ODStatus -Type Personal
 
@@ -65,9 +70,8 @@ Get-ODStatus -OnDemandOnly [-Type <type-Name>] [-IncludeLog] [-Verbose]
 -Verbose           Show verbose information
 
 -OnDemandOnly      Normally On Demand is only tested as a fallback, when
-                   -OnDemandOnly is present it goes directly to 
+                   -OnDemandOnly is present it goes directly to
                    On Demand status. This may resolve flicker issues
-                  
 ```
 
 **Important:**
@@ -78,19 +82,28 @@ Examples:
 
 List status of all OneDrive instances:
 
+```powershell
 Get-ODStatus
+```
 
 Check if a particular file of folder is synchronized
 
+```powershell
 Get-ODStatus -ByPath "$($env:OneDrive)\DalyReports\"
+```
 
 Save and list the log file:
 
+```powershell
 Get-ODStatus -IncludeLog
+```
 
+```powershell
 Get-Item -Path "$($env:Temp)\OneDriveLib*"
+```
 
 For On Demand installations:
 
+```powershell
 Get-ODStatus -OnDemandOnly
 ```
