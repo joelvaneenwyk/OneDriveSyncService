@@ -6,7 +6,7 @@ Watch this video to get started:
 
 Open PowerShell (it cannot be in elevated mode because of OneDrive design):
 
-[Download here](https://github.com/rodneyviana/ODSyncService/releases)
+[Download here](https://github.com/joelvaneenwyk/one-drive-sync-service/releases)
 
 Before running the first time, use this to unblock the DLL that you downloaded:
 
