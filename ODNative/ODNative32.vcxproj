@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{4222D206-0E8A-4F68-A171-4AFDB031098E}</ProjectGuid>
+    <ProjectGuid>{1387E7BE-A6C8-4AF6-AA96-8E4D9BC7BDB9}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>ODNative</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>

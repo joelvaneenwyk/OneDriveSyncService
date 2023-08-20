@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+    <PropertyGroup>
+        <LangVersion>preview</LangVersion>
+        <NETCoreTargetFramework>net8.0</NETCoreTargetFramework>
+        <NETStandardTargetFramework>netstandard2.0</NETStandardTargetFramework>
+        <NETFullTargetFramework>net472</NETFullTargetFramework>
+        <Product>OneDrive Sync Service</Product>
+        <Copyright>$(CopyrightNetFoundation)</Copyright>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <NoWarn>NU5105;NU5128;NU5100;NU5118;0419,0649</NoWarn>
+        <EnableNETAnalyzers>true</EnableNETAnalyzers>
+        <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+    <PropertyGroup>
+        <SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage>
+        <BuildDir>$(MSBuildThisFileDirectory)\Binaries</BuildDir>
+        <IntermediateDir>$(MSBuildThisFileDirectory)\Binaries\Intermediate</IntermediateDir>
+        <ArtifactsDir>$(MSBuildThisFileDirectory)\Binaries\Artifacts</ArtifactsDir>
+        <DevDir>$(MSBuildThisFileDirectory)\Binaries\Dev\</DevDir>
+        <ToolsDir>$(MSBuildThisFileDirectory)\.build\</ToolsDir>
+    </PropertyGroup>
+    <PropertyGroup Label="OutputBuildProps">
+        <Platform Condition="$(Platform) == ''">AnyCPU</Platform>
+        <Configuration Condition="$(Configuration) == ''">Debug</Configuration>
+        <!-- Custom properties -->
+        <BuildDir>$(MSBuildThisFileDirectory)\Binaries</BuildDir>
+        <ProjectBuildDirectoryName>$(MSBuildProjectName)_$(Platform)_$(Configuration)</ProjectBuildDirectoryName>
+        <OutputPathWithoutEndSlash>$(BuildDir)\$(ProjectBuildDirectoryName)</OutputPathWithoutEndSlash>
+        <BaseOutDir>$(OutputPathWithoutEndSlash)</BaseOutDir>
+        <BasePublishDir>$(MSBuildThisFileDirectory)\Binaries\Publish\</BasePublishDir>
+        <!-- MSBuild defined properties redefined -->
+        <BaseIntermediateOutputPath>$(BuildDir)\Intermediate\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
+        <BaseOutputPath>$(BuildDir)\Intermediate\$(MSBuildProjectName)\</BaseOutputPath>
+        <PackageOutputPath>$(BaseOutDir)</PackageOutputPath>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+        <LinkIncremental>true</LinkIncremental>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)'=='Release'">
+        <LinkIncremental>false</LinkIncremental>
+    </PropertyGroup>
+</Project>
