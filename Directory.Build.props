@@ -28,14 +28,20 @@
         <Configuration Condition="$(Configuration) == ''">Debug</Configuration>
         <!-- Custom properties -->
         <BuildDir>$(MSBuildThisFileDirectory)\Binaries</BuildDir>
+        <OutputDirectory>$(Platform)_$(Configuration)</OutputDirectory>
         <ProjectBuildDirectoryName>$(MSBuildProjectName)_$(Platform)_$(Configuration)</ProjectBuildDirectoryName>
         <OutputPathWithoutEndSlash>$(BuildDir)\$(ProjectBuildDirectoryName)</OutputPathWithoutEndSlash>
         <BaseOutDir>$(OutputPathWithoutEndSlash)</BaseOutDir>
         <BasePublishDir>$(MSBuildThisFileDirectory)\Binaries\Publish\</BasePublishDir>
         <!-- MSBuild defined properties redefined -->
         <BaseIntermediateOutputPath>$(BuildDir)\Intermediate\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
-        <BaseOutputPath>$(BuildDir)\Intermediate\$(MSBuildProjectName)\</BaseOutputPath>
+        <BaseOutputPath>$(BuildDir)\Artifacts\$(MSBuildProjectName)\</BaseOutputPath>
         <PackageOutputPath>$(BaseOutDir)</PackageOutputPath>
+    </PropertyGroup>
+    <PropertyGroup>
+        <OutDir>$(SolutionDir)Binaries\Output\$(OutputDirectory)\</OutDir>
+        <IntDir>$(SolutionDir)Binaries\Intermediate\$(ProjectBuildDirectoryName)\</IntDir>
+        <TargetName>$(ProjectName)</TargetName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Configuration)'=='Debug'">
         <LinkIncremental>true</LinkIncremental>

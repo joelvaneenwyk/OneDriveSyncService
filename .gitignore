@@ -8,6 +8,10 @@
 *.sln.docstates
 *.lastcodeanalysissucceeded
 *.exp
+*.tlog
+*.lastbuildstate
+*.idb
+*.recipe
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
