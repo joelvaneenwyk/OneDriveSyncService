@@ -96,15 +96,6 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
-    <PostBuildEvent>
-      <Command>echo copy /y $(TargetDir)*.* $(SolutionDir)Binaries\
-echo copy /y $(TargetDir)*.* $(SolutionDir)TestConsole\bin\$(PlatformTarget)\$(ConfigurationName)\
-echo copy /y $(TargetDir)*.* $(SolutionDir)OdSyncService\bin\$(PlatformTarget)\$(ConfigurationName)\
-copy /y $(TargetDir)*.* $(SolutionDir)Binaries\
-copy /y $(TargetDir)*.* $(SolutionDir)TestConsole\bin\$(PlatformTarget)\$(ConfigurationName)\
-copy /y $(TargetDir)*.* $(SolutionDir)OdSyncService\bin\$(PlatformTarget)\$(ConfigurationName)\
-</Command>
-    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -118,15 +109,6 @@ copy /y $(TargetDir)*.* $(SolutionDir)OdSyncService\bin\$(PlatformTarget)\$(Conf
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
-    <PostBuildEvent>
-      <Command>echo copy /y $(TargetDir)*.* $(SolutionDir)Binaries\
-echo copy /y $(TargetDir)*.* $(SolutionDir)TestConsole\bin\$(PlatformTarget)\$(ConfigurationName)\
-echo copy /y $(TargetDir)*.* $(SolutionDir)OdSyncService\bin\$(PlatformTarget)\$(ConfigurationName)\
-copy /y $(TargetDir)*.* $(SolutionDir)Binaries\
-copy /y $(TargetDir)*.* $(SolutionDir)TestConsole\bin\$(PlatformTarget)\$(ConfigurationName)\
-copy /y $(TargetDir)*.* $(SolutionDir)OdSyncService\bin\$(PlatformTarget)\$(ConfigurationName)\
-</Command>
-    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -144,15 +126,6 @@ copy /y $(TargetDir)*.* $(SolutionDir)OdSyncService\bin\$(PlatformTarget)\$(Conf
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
-    <PostBuildEvent>
-      <Command>echo copy /y $(TargetDir)*.* $(SolutionDir)Binaries\
-echo copy /y $(TargetDir)*.* $(SolutionDir)TestConsole\bin\$(PlatformTarget)\$(ConfigurationName)\
-echo copy /y $(TargetDir)*.* $(SolutionDir)OdSyncService\bin\$(PlatformTarget)\$(ConfigurationName)\
-copy /y $(TargetDir)*.* $(SolutionDir)Binaries\
-copy /y $(TargetDir)*.* $(SolutionDir)TestConsole\bin\$(PlatformTarget)\$(ConfigurationName)\
-copy /y $(TargetDir)*.* $(SolutionDir)OdSyncService\bin\$(PlatformTarget)\$(ConfigurationName)\
-</Command>
-    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -170,15 +143,6 @@ copy /y $(TargetDir)*.* $(SolutionDir)OdSyncService\bin\$(PlatformTarget)\$(Conf
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
-    <PostBuildEvent>
-      <Command>echo copy /y $(TargetDir)*.* $(SolutionDir)Binaries\
-echo copy /y $(TargetDir)*.* $(SolutionDir)TestConsole\bin\$(PlatformTarget)\$(ConfigurationName)\
-echo copy /y $(TargetDir)*.* $(SolutionDir)OdSyncService\bin\$(PlatformTarget)\$(ConfigurationName)\
-copy /y $(TargetDir)*.* $(SolutionDir)Binaries\
-copy /y $(TargetDir)*.* $(SolutionDir)TestConsole\bin\$(PlatformTarget)\$(ConfigurationName)\
-copy /y $(TargetDir)*.* $(SolutionDir)OdSyncService\bin\$(PlatformTarget)\$(ConfigurationName)\
-</Command>
-    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />

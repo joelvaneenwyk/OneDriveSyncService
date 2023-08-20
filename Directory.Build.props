@@ -28,19 +28,19 @@
         <Configuration Condition="$(Configuration) == ''">Debug</Configuration>
         <!-- Custom properties -->
         <BuildDir>$(MSBuildThisFileDirectory)\Binaries</BuildDir>
-        <OutputDirectory>$(Platform)_$(Configuration)</OutputDirectory>
-        <ProjectBuildDirectoryName>$(MSBuildProjectName)_$(Platform)_$(Configuration)</ProjectBuildDirectoryName>
+        <OutputDirectoryName>$(Configuration)_$(Platform)</OutputDirectoryName>
+        <ProjectBuildDirectoryName>$(MSBuildProjectName)_$(Platform)</ProjectBuildDirectoryName>
         <OutputPathWithoutEndSlash>$(BuildDir)\$(ProjectBuildDirectoryName)</OutputPathWithoutEndSlash>
         <BaseOutDir>$(OutputPathWithoutEndSlash)</BaseOutDir>
         <BasePublishDir>$(MSBuildThisFileDirectory)\Binaries\Publish\</BasePublishDir>
         <!-- MSBuild defined properties redefined -->
-        <BaseIntermediateOutputPath>$(BuildDir)\Intermediate\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
-        <BaseOutputPath>$(BuildDir)\Artifacts\$(MSBuildProjectName)\</BaseOutputPath>
+        <BaseIntermediateOutputPath>$(BuildDir)\Intermediate\$(Configuration)\$(ProjectBuildDirectoryName)\</BaseIntermediateOutputPath>
+        <BaseOutputPath>$(BuildDir)\Output\$(OutputDirectoryName)\</BaseOutputPath>
         <PackageOutputPath>$(BaseOutDir)</PackageOutputPath>
     </PropertyGroup>
     <PropertyGroup>
-        <OutDir>$(SolutionDir)Binaries\Output\$(OutputDirectory)\</OutDir>
-        <IntDir>$(SolutionDir)Binaries\Intermediate\$(ProjectBuildDirectoryName)\</IntDir>
+        <OutDir>$(BaseOutputPath)</OutDir>
+        <IntDir>$(BaseIntermediateOutputPath)</IntDir>
         <TargetName>$(ProjectName)</TargetName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Configuration)'=='Debug'">
