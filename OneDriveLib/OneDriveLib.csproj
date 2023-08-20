@@ -104,16 +104,12 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ODNative.dll" />
+    <None Include="$(TargetPath)\Resources\ODNative.dll" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ODNative32.dll" />
+    <None Include="$(TargetPath)\Resources\ODNative32.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>copy /y $(TargetPath) $(SolutionDir)\Binaries\PowerShell\
-copy /y $(TargetDir)$(TargetName).pdb $(SolutionDir)\Binaries\PowerShell\</PostBuildEvent>
-  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
